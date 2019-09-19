@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Third Party yochien Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    {% block styles %}
+    {{ bootstrap.load_css() }}
+    {% endblock %}   
+    
+    {% endblock %}
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="#">Yochien-ThirdParty</a>
+    </div>
+    <div class="navbar-nav">
+        <a class="navbar-brand" href="/ThirdParty">Home</a>
+    </div>
+</nav>
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <form method="POST" action="/ThirdParty/RetailCustomer/ScopeSelection">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Scope</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="scope" class="scope" value="FB=1_3_4_5_6_7_8_9_10_11_29_12_13_14_15_16_17_18_19_27_28_32_33_34_35_37_38_39_40_41_44;IntervalDuration=3600;BlockDuration=monthly;HistoryLength=13">
+                                    FB=1_3_4_5_6_7_8_9_10_11_29_12_13_14_15_16_17_18_19_27_28_32_33_34_35_37_38_39_40_41_44;IntervalDuration=3600;BlockDuration=monthly;HistoryLength=13
+                                </label>
+                            </td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="scope" class="scope" value="FB=1_3_4_5_13_14_39;IntervalDuration=3600;BlockDuration=monthly;HistoryLength=13">
+                                    FB=1_3_4_5_13_14_39;IntervalDuration=3600;BlockDuration=monthly;HistoryLength=13
+                                </label>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="scope" class="scope" value="FB=1_3_4_5_13_14_15_39;IntervalDuration=900;BlockDuration=monthly;HistoryLength=13">
+                                    FB=1_3_4_5_13_14_15_39;IntervalDuration=900;BlockDuration=monthly;HistoryLength=13
+                                </label>
+                            </td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+                <input type="hidden" name="DataCustodianID" value="data_custodian">
+                <input type="submit" name="next" value="Next" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+    
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+</html>

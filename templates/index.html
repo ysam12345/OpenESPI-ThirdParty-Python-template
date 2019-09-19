@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Third Party yochien Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    {% block styles %}
+    {{ bootstrap.load_css() }}
+    {% endblock %}   
+    
+    {% endblock %}
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="#">Yochien-ThirdParty</a>
+    </div>
+    <div class="navbar-nav">
+        <a class="navbar-brand" href="/ThirdParty">Home</a>
+    </div>
+</nav>
+<body>
+    {% block content %}
+    <div class="jumbotron text-center">
+        <h1>Yochien Third Party Page</h1>
+        <p>Connect My Data / Green Button</p> 
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h3>DataCustodian</h3>
+                <p>http://140.121.196.23:6001/DataCustodian/</p>
+                <button type="button" class="btn btn-success" onclick="javascript:location.href='http://140.121.196.23:6001/DataCustodian/'" >DataCustodian</button>
+            </div>
+            <div class="col-4">
+                <h3>ThirdParty</h3>
+                <p>http://140.121.196.23:6001/ThirdParty/</p>
+                <button type="button" class="btn btn-outline-success" onclick="javascript:location.href='http://140.121.196.23:6001/ThirdParty/'" >ThirdParty</button>
+            </div>
+            <div class="col-4">
+                <h3>Yochien Third Party</h3>
+                <p>http://140.121.196.23:6001/ThirdParty/redirect</p>
+                <button type="button" class="btn btn-outline-info" onclick="javascript:location.href='http://140.121.196.23:6012/ThirdParty/redirect'" >Start Test(From OAuth redirect)</button>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+</html>
